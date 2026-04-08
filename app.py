@@ -94,12 +94,12 @@ MAPEO = {
     "matricula":             ["cuenta", "cuenta_matricula", "matricula", "n° de cuenta", "nro de cuenta", "numero de cuenta"],
     "afiliado_numero":       ["credencial", "numero de afiliado", "nro afiliado", "afiliado", "afiliado n°", "codigo_afiliado", "credencial socio"],
     "afiliado_denominacion": ["apellido_afiliado", "nombre de afiliado", "afiliado", "nom.beneficiario", "apellido y nombre socio", "apellido y nombre"],
-    "fecha_prestacion":      ["fecha_transaccion", "fecha prestacion", "fecha consulta", "fecha de transaccion", "fecha turno", "f. trans.", "fecha", "fecha transaccion"],
+    "fecha_prestacion":      ["fecha_transaccion", "fecha prestacion", "fecha consulta", "fecha de transaccion", "fecha turno", "f. trans.", "fecha", "TURNO","fecha transaccion"],
     "cod_practica":          ["prestación", "prestacion", "codigo", "código", "practica", "práctica", "cod prest", "cod_prest"],
     "cantidad":              ["cantidad", "cant", "cant."],
     "honorario":             ["total", "importe total", "importe_total"],
     "iva":                   ["iva_template", "iva t", "iva p", "iva"],
-    "numaut":                ["transaccion_item", "numero autorizacion", "nro.trans.", "nro trans", "id", "id transaccion", "id transaciion"],
+    "numaut":                ["transaccion_item", "numero autorizacion", "nro.trans.", "nro trans", "id", "id transaccion", "id transaciion", "NRO. ORDEN"],
     "coseguro":              ["copago", "coseguro"],
 }
 
