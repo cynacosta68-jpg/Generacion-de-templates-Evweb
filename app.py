@@ -97,7 +97,7 @@ MAPEO = {
     "fecha_prestacion":      ["fecha_transaccion", "fecha prestacion", "fecha consulta", "fecha de transaccion", "fecha turno", "f. trans.", "fecha", "TURNO","fecha transaccion"],
     "cod_practica":          ["prestación", "prestacion", "codigo", "código", "practica", "práctica", "cod prest", "cod_prest"],
     "cantidad":              ["cantidad", "cant", "cant."],
-    "honorario":             ["total", "importe total", "importe_total"],
+    "honorario":             ["total", "importe total", "honorario", "importe_total"],
     "iva":                   ["iva_template", "iva t", "iva p", "iva"],
     "numaut":                ["transaccion_item", "numero autorizacion", "nro.trans.", "nro trans", "id", "id transaccion", "id transaciion", "NRO. ORDEN"],
     "coseguro":              ["copago", "coseguro"],
