@@ -95,7 +95,7 @@ MAPEO = {
     "afiliado_numero":       ["credencial", "numero de afiliado", "nro afiliado", "afiliado", "afiliado n°", "codigo_afiliado", "NRO. BENEFICIO/GP","credencial socio"],
     "afiliado_denominacion": ["apellido_afiliado", "nombre de afiliado", "afiliado", "nom.beneficiario", "apellido y nombre socio", "apellido y nombre"],
     "fecha_prestacion":      ["fecha_transaccion", "fecha prestacion", "fecha consulta", "fecha de transaccion", "fecha turno", "f. trans.", "fecha", "TURNO","fecha transaccion"],
-    "cod_practica":          ["prestación", "prestacion", "codigo", "código", "practica", "práctica", "cod prest", "cod_prest"],
+    "cod_practica":          ["prestación", "prestacion", "codigo", "código", "practica", "práctica", "cod prest", "cod_practica", "cod_prest"],
     "cantidad":              ["cantidad", "cant", "cant."],
     "honorario":             ["total", "importe total", "honorario", "importe_total"],
     "iva":                   ["iva_template", "iva t", "iva p", "iva"],
