@@ -99,7 +99,7 @@ MAPEO = {
     "cantidad":              ["cantidad", "cant", "cant."],
     "honorario":             ["total", "importe total", "honorario", "importe_total"],
     "iva":                   ["iva_template", "iva t", "iva p", "iva"],
-    "numaut":                ["transaccion_item", "numero autorizacion", "nro.trans.", "nro trans", "id", "id transaccion", "id transaciion", "NRO. ORDEN"],
+    "numaut":                ["transaccion_item", "numero autorizacion", "nro.trans.", "nro trans", "id", "id transaccion", "id transaciion", "numaut",  "NRO. ORDEN"],
     "coseguro":              ["copago", "coseguro"],
 }
 
