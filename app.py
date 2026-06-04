@@ -94,7 +94,7 @@ def aplicar_estilo_fila_datos(ws, fila_idx):
 # ============================================================
 MAPEO = {
     "matricula":             ["cuenta", "cuenta_matricula", "matricula", "n° de cuenta", "nro de cuenta", "numero de cuenta"],
-    "afiliado_numero":       ["credencial", "N° Afiliado", "numero de afiliado", "nro afiliado", "afiliado n°", "codigo_afiliado", "NRO. BENEFICIO/GP","credencial socio"],
+    "afiliado_numero":       ["credencial", "N° Afiliado", "afiliado_numero", "numero de afiliado", "nro afiliado", "afiliado n°", "codigo_afiliado", "NRO. BENEFICIO/GP","credencial socio"],
     "afiliado_denominacion": ["apellido_afiliado","NOMBRE AFILIADO", "nombre de afiliado", "afiliado", "nom.beneficiario", "apellido y nombre socio", "afiliado_denominacion",  "apellido y nombre"],
     "fecha_prestacion":      ["fecha_transaccion", "fecha prestacion", "fecha consulta", "fecha de transaccion", "fecha turno", "f. trans.", "fecha", "TURNO","fecha transaccion"],
     "cod_practica":          ["prestación", "prestacion", "codigo", "código", "practica", "práctica", "cod prest", "cod_practica", "cod_prest"],
