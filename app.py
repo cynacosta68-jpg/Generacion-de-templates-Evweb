@@ -21,7 +21,7 @@ login_required()
 SHEET_NAME = "ImportacionesEvweb"
 
 FORMATO_NUMERO = '_-* #,##0.00_-;\\-* #,##0.00_-;_-* "-"??_-;_-@_-'
-FORMATO_FECHA  = 'd/m/yyyy h:mm'
+FORMATO_FECHA  = 'dd/mm/yyyy h:mm'
 
 # (nombre, ancho, num_format, h_align, v_align, header_num_format, header_h_align, header_v_align)
 COLUMNAS = [
