@@ -101,12 +101,12 @@ MAPEO = {
     "cantidad":              ["cantidad", "cant", "cant."],
     "honorario":             ["total", "importe total", "honorario", "Facturado", "importe_total"],
     "iva":                   ["iva_template", "iva t", "iva p", "iva"],
-    "numaut":                ["transaccion_item", "numero autorizacion", "nro.trans.", "nro trans", "id", "id transaccion", "id transaciion", "numaut",  "NRO. ORDEN"],
+    "nroAutorizacion":       ["transaccion_item", "numero autorizacion", "nro.trans.", "nro trans", "id", "id transaccion", "id transaciion", "numaut",  "NRO. ORDEN"],
     "coseguro":              ["copago", "coseguro"],
 }
 
 COLUMNAS_CERO   = ["actuacion", "1er_ayudante", "2do_ayudante", "gasto", "modulo", "aparatoligia"]
-COLUMNAS_VACIAS = ["tipo_facturacion", "id_anticipo", "cuit", "modalidadCoseguro", "nroAutorizacion"]
+COLUMNAS_VACIAS = ["tipo_facturacion", "id_anticipo", "cuit", "modalidadCoseguro", "numaut"]
 
 FILAS_POR_TEMPLATE = 1500
 
