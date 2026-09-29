@@ -41,12 +41,14 @@ COLUMNAS = [
     ("aparatoligia",           None,     "General",     None,     None,    "General",         None,     None),
     ("id_anticipo",            None,     "General",     None,     None,    "General",         None,     None),
     ("iva",                    11.66,    "General",     "center", None,    "General",         None,     None),
-    ("numaut",                 15.33,    "General",     "center", None,    "General",         None,     None),
+    # CAMBIO: numaut queda vacía, toma el formato "angosto" que antes tenía nroAutorizacion
+    ("numaut",                 11.66,    "General",     None,     None,    "General",         None,     None),
     ("cuit",                   13.66,    "General",     None,     None,    "General",         None,     None),
     ("fecha_presentacion",     16.78,    FORMATO_FECHA, "center", "center",FORMATO_FECHA,     "center", "center"),
     ("coseguro",               11.66,    FORMATO_NUMERO,None,     None,    "General",         None,     None),
     ("modalidadCoseguro",      11.55,    "General",     None,     None,    "General",         None,     None),
-    ("nroAutorizacion",        11.66,    "General",     None,     None,    "General",         None,     None),
+    # CAMBIO: nroAutorizacion recibe el dato, con el ancho y centrado que antes tenía numaut
+    ("nroAutorizacion",        15.33,    "General",     "center", None,    "General",         None,     None),
 ]
 
 NOMBRES_COLUMNAS = [c[0] for c in COLUMNAS]
@@ -101,7 +103,8 @@ MAPEO = {
     "cantidad":              ["cantidad", "cant", "cant."],
     "honorario":             ["total", "importe total", "honorario", "Facturado", "importe_total"],
     "iva":                   ["iva_template", "iva t", "iva p", "iva"],
-    "nroAutorizacion":       ["transaccion_item", "numero autorizacion", "nro.trans.", "nro trans", "id", "id transaccion", "id transaciion", "numaut",  "NRO. ORDEN"],
+    # CAMBIO: se quitó el candidato "id" suelto (por substring coincidía con "apellido")
+    "nroAutorizacion":       ["transaccion_item", "numero autorizacion", "nro.trans.", "nro trans", "id transaccion", "id transaciion", "numaut", "NRO. ORDEN"],
     "coseguro":              ["copago", "coseguro"],
 }
 
@@ -202,7 +205,7 @@ def construir_filas_salida(df):
         for c in COLUMNAS_CERO:
             fila[c] = 0
         for c in COLUMNAS_VACIAS:
-            fila[c] = None
+            fila[c] = None   # numaut queda vacía acá
 
         col = resolver["honorario"]
         fila["honorario"] = row[col] if col else None
@@ -210,8 +213,9 @@ def construir_filas_salida(df):
         col = resolver["iva"]
         fila["iva"] = row[col] if col else 0
 
-        col = resolver["numaut"]
-        fila["numaut"] = _extraer_numero(row[col]) if col else None
+        # CAMBIO: el número de autorización va a nroAutorizacion (antes iba a numaut)
+        col = resolver["nroAutorizacion"]
+        fila["nroAutorizacion"] = _extraer_numero(row[col]) if col else None
 
         fila["fecha_presentacion"] = fecha_pres
 
@@ -237,12 +241,9 @@ def escribir_template(filas, ruta_salida):
 
 def generar_zip_templates(uploaded_file_obj, ruta_zip_salida,
                           filas_por_template=FILAS_POR_TEMPLATE):
-    # Use BytesIO to read the uploaded file directly without saving to disk first
     df = pd.read_excel(uploaded_file_obj, dtype=object)
     filas = construir_filas_salida(df)
 
-    # Use BytesIO for templates to avoid disk writes if possible, or temporary directory
-    # For this, we'll stick to a temporary directory as openpyxl's save needs a path
     carpeta_tmp = "_tmp_templates"
     os.makedirs(carpeta_tmp, exist_ok=True)
     rutas = []
@@ -266,9 +267,8 @@ def generar_zip_templates(uploaded_file_obj, ruta_zip_salida,
         for r in rutas:
             zf.write(r, arcname=os.path.basename(r))
 
-    # Clean up temporary files/directory
     shutil.rmtree(carpeta_tmp, ignore_errors=True)
-    
+
     return ruta_zip_salida, total, len(rutas)
 
 
@@ -291,7 +291,7 @@ if uploaded_file is not None:
         )
 
         st.success(f"✅ {total_filas} filas procesadas en {n_templates} template(s)")
-        
+
         with open(ruta_zip, "rb") as f:
             st.download_button(
                 label="⬇️ Descargar Templates.zip",
@@ -299,9 +299,8 @@ if uploaded_file is not None:
                 file_name="Templates.zip",
                 mime="application/zip"
             )
-        os.remove(ruta_zip) # Clean up the generated zip file
+        os.remove(ruta_zip)
 
     except Exception as e:
         st.error(f"Ocurrió un error al procesar el archivo: {e}")
         st.exception(e)
-
