@@ -104,7 +104,7 @@ MAPEO = {
     "honorario":             ["total", "importe total", "honorario", "Facturado", "importe_total"],
     "iva":                   ["iva_template", "iva t", "iva p", "iva"],
     # CAMBIO: se quitó el candidato "id" suelto (por substring coincidía con "apellido")
-    "nroAutorizacion":       ["transaccion_item", "numero autorizacion", "nro.trans.", "nro trans", "id transaccion", "id transaciion", "numaut", "NRO. ORDEN"],
+    "nroAutorizacion":       ["transaccion_item", "numero autorizacion", "nro.trans.", "nro trans", "id transaccion", "id transaciion", "nroAutorizacion ", "NRO. ORDEN"],
     "coseguro":              ["copago", "coseguro"],
 }
 
